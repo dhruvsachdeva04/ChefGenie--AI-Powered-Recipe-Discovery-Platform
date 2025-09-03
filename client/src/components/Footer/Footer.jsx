@@ -15,16 +15,16 @@ const Footer = React.forwardRef(({ scrollToSection }, ref) => {
         <div className="footer-column2">
           <h3 className="footer-heading">Contacts</h3>
           <ul className="name-list">
-            <li>Tridib Nandi 
+            <li>Dhruv Sachdeva
               <ul>
-                <li><a href="https://www.linkedin.com/in/tridib--nandi/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+                <li><a href="https://www.linkedin.com/in/dhruv-sachdeva-3b5aa9264/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
               </ul>
             </li>
-            <li> Shruti Gupta 
+            {/* <li> Shruti Gupta 
               <ul>
                 <li><a href="https://www.linkedin.com/in/shrutigupta0806/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
               </ul>
-            </li>
+            </li> */}
           </ul>
         </div>
 
@@ -38,9 +38,9 @@ const Footer = React.forwardRef(({ scrollToSection }, ref) => {
         </div>
 
       </div>
-      <div className="footer-bottom">
-        <p>&copy; Built with ❤️ by Tridib and Shruti in India!</p>
-      </div>
+      {/* <div className="footer-bottom">
+        
+      </div> */}
     </footer>
     </section>
     </>

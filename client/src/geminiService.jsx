@@ -7,7 +7,7 @@ const genAI = new GoogleGenerativeAI(API_KEY);
 export async function getDishSuggestions(ingredients) {
   const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
 
-  const prompt = `Suggest 5 Indian dishes that can be made using some or all of these ingredients: ${ingredients}. Only provide the names of the dishes, separated by commas.`;
+  const prompt = `Suggest 10 Indian dishes that can be made using some or all of these ingredients: ${ingredients}. Only provide the names of the dishes, separated by commas.`;
 
   const result = await model.generateContent(prompt);
   const response = result.response;
