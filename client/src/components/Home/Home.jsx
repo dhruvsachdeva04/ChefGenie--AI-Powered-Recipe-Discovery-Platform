@@ -4,6 +4,7 @@ import './Home.css'
 
 const Home = React.forwardRef(({ scrollToSection }, ref) => {
   const [ingredients, setIngredients] = useState('');
+  const [isSearchFocused, setIsSearchFocused] = useState(false);
   const navigate = useNavigate();
 
   const handleInputChange = (event) => {
@@ -15,55 +16,140 @@ const Home = React.forwardRef(({ scrollToSection }, ref) => {
     navigate('/search', { state: { ingredients: ingredient } });
   };
 
+  const handleSearchSubmit = (e) => {
+    e.preventDefault();
+    if (ingredients.trim()) {
+      navigate('/search', { state: { ingredients: ingredients.trim() } });
+    }
+  };
+
+  const popularIngredients = [
+    { name: 'Tomato', emoji: '🍅' },
+    { name: 'Mushroom', emoji: '🍄' },
+    { name: 'Potato', emoji: '🥔' },
+    { name: 'Carrot', emoji: '🥕' },
+    { name: 'Yoghurt', emoji: '🥛' },
+    { name: 'Onion', emoji: '🧅' },
+    { name: 'Garlic', emoji: '🧄' },
+    { name: 'Chicken', emoji: '🍗' }
+  ];
+
   return (
-    <>
-    <section ref={ref} id="home">
-      <div className='home'>
-        <div className="upper">
-          <div className="navbar">
-            <div className="navName" onClick={() => scrollToSection('home')}>Recipify</div>
-            <div className="navButtons">
-              <button onClick={() => scrollToSection('popularRecipes')}>Popular Recipes</button>
-              <button onClick={() => scrollToSection('testimonials')}>What They Say</button>
-              <button onClick={() => scrollToSection('footer')}>Contact Us</button>
+    <section ref={ref} id="home" className="hero-section">
+      <div className="container">
+        <div className="hero-content">
+          {/* Hero Text */}
+          <div className="hero-text">
+            <div className="hero-badge">
+              <span className="badge-icon">✨</span>
+              <span>AI-Powered Recipe Discovery</span>
             </div>
-          </div>
-          <div className="content">
-            <div className="appName">
-              Recipify
-            </div>
-            <div className="caption">
-              Stuck in a cooking rut? Enter your ingredients on Recipify and get delicious dish ideas instantly. Click for step-by-step recipes. Cook confidently and enjoy every meal with Recipify—your fun kitchen buddy!
-            </div>
-          </div>
-        </div>
-        <div className="lower">
+            
+            <h1 className="hero-title">
+              Transform Your
+              <span className="gradient-text"> Ingredients</span>
+              <br />
+              Into Amazing
+              <span className="gradient-text"> Dishes</span>
+            </h1>
+            
+            <p className="hero-description">
+              Stuck in a cooking rut? Enter your ingredients and let our AI suggest 
+              delicious dishes instantly. Get step-by-step recipes and cook with confidence.
+            </p>
 
+            {/* Search Form */}
+            <form onSubmit={handleSearchSubmit} className="search-form">
+              <div className={`search-container ${isSearchFocused ? 'focused' : ''}`}>
+                <div className="search-icon">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                    <circle cx="11" cy="11" r="8"></circle>
+                    <path d="m21 21-4.35-4.35"></path>
+                  </svg>
+                </div>
+                <input
+                  type="text"
+                  value={ingredients}
+                  onChange={handleInputChange}
+                  onFocus={() => setIsSearchFocused(true)}
+                  onBlur={() => setIsSearchFocused(false)}
+                  placeholder="Enter ingredients (e.g., tomato, onion, chicken)"
+                  className="search-input"
+                />
+                <button type="submit" className="search-button">
+                  <span>Discover</span>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                    <path d="M5 12h14M12 5l7 7-7 7"></path>
+                  </svg>
+                </button>
+              </div>
+            </form>
+
+            {/* Popular Ingredients */}
+            <div className="popular-ingredients">
+              <p className="ingredients-label">Popular ingredients:</p>
+              <div className="ingredients-grid">
+                {popularIngredients.map((ingredient, index) => (
+                  <button
+                    key={index}
+                    onClick={() => handleIngredientClick(ingredient.name)}
+                    className="ingredient-tag"
+                  >
+                    <span className="ingredient-emoji">{ingredient.emoji}</span>
+                    <span className="ingredient-name">{ingredient.name}</span>
+                  </button>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          {/* Hero Visual */}
+          <div className="hero-visual">
+            <div className="floating-cards">
+              <div className="floating-card card-1">
+                <div className="card-icon">🍕</div>
+                <div className="card-text">Pizza</div>
+              </div>
+              <div className="floating-card card-2">
+                <div className="card-icon">🍜</div>
+                <div className="card-text">Pasta</div>
+              </div>
+              <div className="floating-card card-3">
+                <div className="card-icon">🍛</div>
+                <div className="card-text">Curry</div>
+              </div>
+              <div className="floating-card card-4">
+                <div className="card-icon">🥗</div>
+                <div className="card-text">Salad</div>
+              </div>
+            </div>
+            
+            <div className="hero-image-container">
+              <div className="hero-image">
+                <img src="src/components/Home/pizz.png" alt="Delicious Food" />
+              </div>
+              <div className="image-glow"></div>
+            </div>
+          </div>
         </div>
 
-        <div className="pizza">
-          <img src="src/components/Home/pizz.png" alt="Pizza" />
-        </div>
-        <div className="searchArea">
-          <div className="searchHeading">
-            Enter raw materials
+        {/* Stats Section */}
+        <div className="hero-stats">
+          <div className="stat-item">
+            <div className="stat-number">10K+</div>
+            <div className="stat-label">Recipes</div>
           </div>
-          <div className="searchField">
-            <i className="fa-solid fa-magnifying-glass"></i>
-            <input type="text" value={ingredients} onChange={handleInputChange} />
-            <Link to="/search" state={{ ingredients }} className="cook">COOK</Link>
+          <div className="stat-item">
+            <div className="stat-number">50K+</div>
+            <div className="stat-label">Happy Cooks</div>
           </div>
-          <div className="tags">
-            <button onClick={() => handleIngredientClick('Tomato')}>Tomato</button>
-            <button onClick={() => handleIngredientClick('Mushroom')}>Mushroom</button>
-            <button onClick={() => handleIngredientClick('Potato')}>Potato</button>
-            <button onClick={() => handleIngredientClick('Carrot')}>Carrot</button>
-            <button onClick={() => handleIngredientClick('Yoghurt')}>Yoghurt</button>
+          <div className="stat-item">
+            <div className="stat-number">4.9★</div>
+            <div className="stat-label">Rating</div>
           </div>
         </div>
       </div>
     </section>
-    </>
   )
 });
 

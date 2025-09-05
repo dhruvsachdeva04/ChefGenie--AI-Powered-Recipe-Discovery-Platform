@@ -224,6 +224,8 @@ def scrape_recipe(dish):
                             "recipe_link": recipe_link,
                             "ingredients": ingredients,
                             "instructions": instructions,
+                            "source": "web_scraping",
+                            "scraped_from": "indianhealthyrecipes.com"
                         }
                     else:
                         print("❌ Failed to split recipe into ingredients and instructions")
