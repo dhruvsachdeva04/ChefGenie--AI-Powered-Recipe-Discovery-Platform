@@ -2,7 +2,7 @@ import React, { forwardRef } from 'react'
 import { AnimatedButton } from '../UI';
 import './popRec.css';
 import RepCard from './RepCard'
-import image1 from '../../assets/pavv.png'
+import image1 from '../../assets/momo.png'
 import image2 from '../../assets/dosa.png'
 import image3 from '../../assets/gulab.png'
 
@@ -10,35 +10,35 @@ const popularRecipes = [
   {
     id: 1,
     recImage: image1,
-    dishName: 'Pav Bhaji',
-    prepTime: '15 min',
-    cookTime: '35 min',
-    difficulty: 'Easy',
-    rating: 4.9,
-    category: 'Street Food',
-    recLink: "https://www.indianhealthyrecipes.com/pav-bhaji-recipe-how-to-make-pav-bhaji-step-by-step-pictures/"
+    dishName: 'Chicken Momos',
+    prepTime: '20 min',
+    cookTime: '15 min',
+    difficulty: 'Medium',
+    rating: 4.8,
+    category: 'Tibetan',
+    recLink: "https://www.indianhealthyrecipes.com/chicken-momos-recipe/"
   },
   {
     id: 2,
     recImage: image2,
-    dishName: 'Masala Dosa',
-    prepTime: '10 min',
-    cookTime: '60 min',
-    difficulty: 'Medium',
-    rating: 4.7,
-    category: 'South Indian',
-    recLink: "https://www.indianhealthyrecipes.com/masala-dosa-recipe/"
+    dishName: 'Paneer Butter Masala',
+    prepTime: '15 min',
+    cookTime: '25 min',
+    difficulty: 'Easy',
+    rating: 4.9,
+    category: 'North Indian',
+    recLink: "https://www.indianhealthyrecipes.com/paneer-butter-masala-recipe/"
   },
   {
     id: 3,
     recImage: image3,
-    dishName: 'Gulab Jamun',
-    prepTime: '10 min',
-    cookTime: '20 min',
-    difficulty: 'Easy',
-    rating: 4.8,
-    category: 'Dessert',
-    recLink: "https://www.indianhealthyrecipes.com/gulab-jamun-recipe-using-milk-powder/"
+    dishName: 'Rasgulla',
+    prepTime: '15 min',
+    cookTime: '30 min',
+    difficulty: 'Medium',
+    rating: 4.7,
+    category: 'Bengali Dessert',
+    recLink: "https://www.indianhealthyrecipes.com/rasgulla-recipe/"
   },
 ]
 

@@ -17,9 +17,9 @@ const Footer = React.forwardRef(({ scrollToSection }, ref) => {
                   <span className="brand-text">ChefGenie</span>
                 </div>
                 <p className="brand-description">
-                  Say goodbye to "What's for dinner?" and let ChefGenie inspire your kitchen. 
-                  Enjoy delicious meals, explore new recipes, and make the most of your ingredients 
-                  with your personal AI culinary guide.
+                  Transform your cooking journey with ChefGenie's revolutionary AI-powered recipe discovery. 
+                  From traditional family recipes to innovative fusion dishes, unlock endless culinary possibilities 
+                  and create memorable dining experiences that bring joy to every meal.
                 </p>
                 <div className="social-links">
                   <a href="https://www.linkedin.com/in/dhruv-sachdeva-3b5aa9264/" target="_blank" rel="noopener noreferrer" className="social-link">
