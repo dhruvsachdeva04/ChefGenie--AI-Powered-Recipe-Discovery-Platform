@@ -25,13 +25,12 @@ export const Layout = () => {
           <div className="nav-content">
             <div className="nav-brand">
               <span className="brand-icon">🍳</span>
-              <span className="brand-text">Recipify</span>
+              <span className="brand-text">ChefGenie</span>
             </div>
             
             <div className="nav-links">
               <a href="#home" className="nav-link">Home</a>
               <a href="#popular-recipes" className="nav-link">Recipes</a>
-              <a href="#testimonials" className="nav-link">Reviews</a>
               <a href="#footer" className="nav-link">Contact</a>
             </div>
             

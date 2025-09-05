@@ -12,7 +12,7 @@ const testimonials = [
     profileName: 'Ayush Gupta',
     role: 'Food Blogger',
     rating: 5,
-    revieww: 'Recipify is my go-to for meal inspiration. The app makes it so easy to find new and exciting dishes to try. The AI suggestions are spot-on and the recipes are always delicious!'
+    revieww: 'ChefGenie is my go-to for meal inspiration. The app makes it so easy to find new and exciting dishes to try. The AI suggestions are spot-on and the recipes are always delicious!'
   },
   {
     id: 2,
@@ -20,7 +20,7 @@ const testimonials = [
     profileName: 'Sanket Trivedi',
     role: 'Home Chef',
     rating: 5,
-    revieww: 'Fantastic app! Recipify helps me make the most of what I have in the kitchen. The recipe suggestions and easy navigation make meal planning so much easier. Love it!'
+    revieww: 'Fantastic app! ChefGenie helps me make the most of what I have in the kitchen. The recipe suggestions and easy navigation make meal planning so much easier. Love it!'
   },
   {
     id: 3,
@@ -28,7 +28,7 @@ const testimonials = [
     profileName: 'Aditya Gahukar',
     role: 'Cooking Enthusiast',
     rating: 5,
-    revieww: 'I love how Recipify simplifies meal planning. Input your ingredients, get dish ideas, and view recipes all in one place. It\'s like having a personal chef in my pocket!'
+    revieww: 'I love how ChefGenie simplifies meal planning. Input your ingredients, get dish ideas, and view recipes all in one place. It\'s like having a personal chef in my pocket!'
   },
 ]
 
@@ -48,7 +48,7 @@ const Testimonials = forwardRef((props, ref) => {
           
           <p className="section-description">
             Don't just take our word for it. Here's what our amazing community 
-            of home cooks and food lovers have to say about Recipify.
+            of home cooks and food lovers have to say about ChefGenie.
           </p>
         </div>
 

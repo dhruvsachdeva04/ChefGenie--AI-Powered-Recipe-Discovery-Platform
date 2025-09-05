@@ -1,7 +1,6 @@
 import React, { useRef } from 'react';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import './App.css';
-import Testimonials from './components/Testimonials/Testimonials';
 import PopularRecipes from './components/PopularRecipes/PopularRecipes';
 import Footer from './components/Footer/Footer';
 import Home from './components/Home/Home';
@@ -11,7 +10,6 @@ import { Layout } from './components/Layout/Layout';
 function App() {
   const sectionRefs = {
     popularRecipes: useRef(null),
-    testimonials: useRef(null),
     footer: useRef(null),
     home: useRef(null),
     // Add more refs as needed
@@ -33,7 +31,6 @@ function App() {
               element={[
                 <Home ref={sectionRefs.home} scrollToSection={scrollToSection}/>,
                 <PopularRecipes ref={sectionRefs.popularRecipes} />,
-                <Testimonials ref={sectionRefs.testimonials} />,
                 <Footer ref={sectionRefs.footer} scrollToSection={scrollToSection} />
               ]} 
             />

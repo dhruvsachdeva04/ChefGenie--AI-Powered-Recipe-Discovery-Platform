@@ -14,10 +14,10 @@ const Footer = React.forwardRef(({ scrollToSection }, ref) => {
               <div className="brand-info">
                 <div className="brand-logo">
                   <span className="brand-icon">🍳</span>
-                  <span className="brand-text">Recipify</span>
+                  <span className="brand-text">ChefGenie</span>
                 </div>
                 <p className="brand-description">
-                  Say goodbye to "What's for dinner?" and let Recipify inspire your kitchen. 
+                  Say goodbye to "What's for dinner?" and let ChefGenie inspire your kitchen. 
                   Enjoy delicious meals, explore new recipes, and make the most of your ingredients 
                   with your personal AI culinary guide.
                 </p>
@@ -38,7 +38,6 @@ const Footer = React.forwardRef(({ scrollToSection }, ref) => {
                 <ul className="link-list">
                   <li><a onClick={() => scrollToSection('home')} className="footer-link">Get Dish Suggestions</a></li>
                   <li><a onClick={() => scrollToSection('popularRecipes')} className="footer-link">Popular Recipes</a></li>
-                  <li><a onClick={() => scrollToSection('testimonials')} className="footer-link">User Reviews</a></li>
                   <li><a href="#" className="footer-link">AI Features</a></li>
                 </ul>
               </div>
@@ -90,7 +89,7 @@ const Footer = React.forwardRef(({ scrollToSection }, ref) => {
           <div className="footer-bottom">
             <div className="footer-bottom-content">
               <div className="copyright">
-                <p>&copy; {currentYear} Recipify. All rights reserved.</p>
+                <p>&copy; {currentYear} ChefGenie. All rights reserved.</p>
               </div>
               <div className="footer-bottom-links">
                 <a href="#" className="footer-bottom-link">Privacy</a>
