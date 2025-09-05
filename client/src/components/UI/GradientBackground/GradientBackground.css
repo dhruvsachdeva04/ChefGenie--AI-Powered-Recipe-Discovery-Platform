@@ -1,0 +1,244 @@
+/* Gradient Background Styles */
+.gradient-background {
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+.gradient-background__content {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+}
+
+/* Base gradient variants */
+.gradient-background--primary {
+  background: 
+    radial-gradient(circle at 20% 80%, rgba(102, 126, 234, 0.15) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(118, 75, 162, 0.15) 0%, transparent 50%),
+    radial-gradient(circle at 40% 40%, rgba(240, 147, 251, 0.1) 0%, transparent 50%),
+    var(--bg-primary);
+}
+
+.gradient-background--secondary {
+  background: 
+    radial-gradient(circle at 30% 70%, rgba(240, 147, 251, 0.15) 0%, transparent 50%),
+    radial-gradient(circle at 70% 30%, rgba(245, 87, 108, 0.15) 0%, transparent 50%),
+    radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.05) 0%, transparent 50%),
+    var(--bg-primary);
+}
+
+.gradient-background--accent {
+  background: 
+    radial-gradient(circle at 25% 75%, rgba(79, 172, 254, 0.15) 0%, transparent 50%),
+    radial-gradient(circle at 75% 25%, rgba(0, 242, 254, 0.15) 0%, transparent 50%),
+    radial-gradient(circle at 50% 50%, rgba(67, 233, 123, 0.1) 0%, transparent 50%),
+    var(--bg-primary);
+}
+
+.gradient-background--success {
+  background: 
+    radial-gradient(circle at 20% 80%, rgba(67, 233, 123, 0.15) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(56, 249, 215, 0.15) 0%, transparent 50%),
+    radial-gradient(circle at 40% 40%, rgba(79, 172, 254, 0.1) 0%, transparent 50%),
+    var(--bg-primary);
+}
+
+/* Intensity variants */
+.gradient-background--low {
+  background: 
+    radial-gradient(circle at 20% 80%, rgba(102, 126, 234, 0.05) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(118, 75, 162, 0.05) 0%, transparent 50%),
+    var(--bg-primary);
+}
+
+.gradient-background--medium {
+  /* Default intensity - already defined in base variants */
+}
+
+.gradient-background--high {
+  background: 
+    radial-gradient(circle at 20% 80%, rgba(102, 126, 234, 0.25) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(118, 75, 162, 0.25) 0%, transparent 50%),
+    radial-gradient(circle at 40% 40%, rgba(240, 147, 251, 0.2) 0%, transparent 50%),
+    var(--bg-primary);
+}
+
+/* Animated gradient orbs */
+.gradient-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(60px);
+  opacity: 0.3;
+  animation: float 6s ease-in-out infinite;
+}
+
+.gradient-orb--1 {
+  width: 300px;
+  height: 300px;
+  background: var(--primary-gradient);
+  top: 10%;
+  left: 10%;
+  animation-delay: 0s;
+}
+
+.gradient-orb--2 {
+  width: 200px;
+  height: 200px;
+  background: var(--secondary-gradient);
+  top: 60%;
+  right: 10%;
+  animation-delay: 2s;
+}
+
+.gradient-orb--3 {
+  width: 250px;
+  height: 250px;
+  background: var(--accent-gradient);
+  bottom: 20%;
+  left: 50%;
+  animation-delay: 4s;
+}
+
+/* Mouse-following animation */
+.gradient-background--animated .gradient-orb--1 {
+  animation: float 6s ease-in-out infinite, followMouse1 8s ease-out infinite;
+}
+
+.gradient-background--animated .gradient-orb--2 {
+  animation: float 6s ease-in-out infinite, followMouse2 10s ease-out infinite;
+}
+
+.gradient-background--animated .gradient-orb--3 {
+  animation: float 6s ease-in-out infinite, followMouse3 12s ease-out infinite;
+}
+
+/* Floating animations */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px) scale(1);
+  }
+  50% {
+    transform: translateY(-20px) scale(1.05);
+  }
+}
+
+/* Mouse-following animations */
+@keyframes followMouse1 {
+  0% {
+    transform: translate(0, 0) scale(1);
+  }
+  25% {
+    transform: translate(calc(var(--mouse-x) * 0.1), calc(var(--mouse-y) * 0.1)) scale(1.1);
+  }
+  50% {
+    transform: translate(calc(var(--mouse-x) * 0.05), calc(var(--mouse-y) * 0.05)) scale(0.9);
+  }
+  75% {
+    transform: translate(calc(var(--mouse-x) * -0.05), calc(var(--mouse-y) * -0.05)) scale(1.05);
+  }
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+}
+
+@keyframes followMouse2 {
+  0% {
+    transform: translate(0, 0) scale(1);
+  }
+  33% {
+    transform: translate(calc(var(--mouse-x) * -0.08), calc(var(--mouse-y) * 0.08)) scale(1.2);
+  }
+  66% {
+    transform: translate(calc(var(--mouse-x) * 0.08), calc(var(--mouse-y) * -0.08)) scale(0.8);
+  }
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+}
+
+@keyframes followMouse3 {
+  0% {
+    transform: translate(0, 0) scale(1);
+  }
+  20% {
+    transform: translate(calc(var(--mouse-x) * 0.06), calc(var(--mouse-y) * -0.06)) scale(1.15);
+  }
+  40% {
+    transform: translate(calc(var(--mouse-x) * -0.06), calc(var(--mouse-y) * 0.06)) scale(0.85);
+  }
+  60% {
+    transform: translate(calc(var(--mouse-x) * 0.03), calc(var(--mouse-y) * 0.03)) scale(1.05);
+  }
+  80% {
+    transform: translate(calc(var(--mouse-x) * -0.03), calc(var(--mouse-y) * -0.03)) scale(0.95);
+  }
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+}
+
+/* Pulsing effect for high intensity */
+.gradient-background--high .gradient-orb {
+  animation: float 6s ease-in-out infinite, pulse 4s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 0.3;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.6;
+    transform: scale(1.1);
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .gradient-orb {
+    filter: blur(40px);
+  }
+  
+  .gradient-orb--1 {
+    width: 200px;
+    height: 200px;
+  }
+  
+  .gradient-orb--2 {
+    width: 150px;
+    height: 150px;
+  }
+  
+  .gradient-orb--3 {
+    width: 180px;
+    height: 180px;
+  }
+  
+  .gradient-background--high .gradient-orb {
+    opacity: 0.2;
+  }
+}
+
+@media (max-width: 480px) {
+  .gradient-orb {
+    filter: blur(30px);
+    opacity: 0.2;
+  }
+  
+  .gradient-orb--1 {
+    width: 150px;
+    height: 150px;
+  }
+  
+  .gradient-orb--2 {
+    width: 120px;
+    height: 120px;
+  }
+  
+  .gradient-orb--3 {
+    width: 140px;
+    height: 140px;
+  }
+}

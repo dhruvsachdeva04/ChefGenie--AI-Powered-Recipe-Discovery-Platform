@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { useLocation, useNavigate } from 'react-router-dom'
+import { AnimatedButton, LoadingSpinner } from '../UI';
 import './SearchScreen.css'
 import { getDishSuggestions } from '../../geminiService'
 import { fetchRecipe } from '../../apiService'
@@ -85,12 +86,20 @@ const SearchScreen = () => {
       <div className="container">
         {/* Header */}
         <div className="search-header">
-          <button className="back-button" onClick={handleBackClick}>
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-              <path d="M19 12H5M12 19l-7-7 7-7"></path>
-            </svg>
-            <span>Back to Home</span>
-          </button>
+          <AnimatedButton 
+            variant="ghost" 
+            size="medium"
+            icon={
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                <path d="M19 12H5M12 19l-7-7 7-7"></path>
+              </svg>
+            }
+            iconPosition="left"
+            onClick={handleBackClick}
+            className="back-button"
+          >
+            Back to Home
+          </AnimatedButton>
           
           <div className="search-title">
             <h1>Discover Amazing Recipes</h1>
@@ -117,18 +126,22 @@ const SearchScreen = () => {
                 placeholder="Enter ingredients (e.g., tomato, onion, chicken)"
                 className="search-input"
               />
-              <button type="submit" className="search-button" disabled={loading}>
-                {loading ? (
-                  <div className="loading-spinner"></div>
-                ) : (
-                  <>
-                    <span>Discover</span>
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                      <path d="M5 12h14M12 5l7 7-7 7"></path>
-                    </svg>
-                  </>
-                )}
-              </button>
+              <AnimatedButton 
+                type="submit" 
+                variant="primary" 
+                size="medium"
+                loading={loading}
+                icon={
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                    <path d="M5 12h14M12 5l7 7-7 7"></path>
+                  </svg>
+                }
+                iconPosition="right"
+                className="search-button"
+                disabled={loading}
+              >
+                Discover
+              </AnimatedButton>
             </div>
           </form>
 
@@ -220,10 +233,12 @@ const SearchScreen = () => {
         {/* Loading State */}
         {loading && !selectedRecipe && (
           <div className="loading-section">
-            <div className="loading-content">
-              <div className="loading-spinner large"></div>
-              <p>Discovering amazing recipes...</p>
-            </div>
+            <LoadingSpinner 
+              size="large" 
+              color="primary" 
+              text="Discovering amazing recipes..." 
+              fullScreen={false}
+            />
           </div>
         )}
       </div>

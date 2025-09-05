@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { Link, useNavigate } from "react-router-dom";
+import { AnimatedButton, StatsCounter } from '../UI';
 import './Home.css'
 
 const Home = React.forwardRef(({ scrollToSection }, ref) => {
@@ -76,12 +77,20 @@ const Home = React.forwardRef(({ scrollToSection }, ref) => {
                   placeholder="Enter ingredients (e.g., tomato, onion, chicken)"
                   className="search-input"
                 />
-                <button type="submit" className="search-button">
-                  <span>Discover</span>
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                    <path d="M5 12h14M12 5l7 7-7 7"></path>
-                  </svg>
-                </button>
+                <AnimatedButton 
+                  type="submit" 
+                  variant="primary" 
+                  size="medium"
+                  icon={
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                      <path d="M5 12h14M12 5l7 7-7 7"></path>
+                    </svg>
+                  }
+                  iconPosition="right"
+                  className="search-button"
+                >
+                  Discover
+                </AnimatedButton>
               </div>
             </form>
 
@@ -136,15 +145,37 @@ const Home = React.forwardRef(({ scrollToSection }, ref) => {
         {/* Stats Section */}
         <div className="hero-stats">
           <div className="stat-item">
-            <div className="stat-number">10K+</div>
+            <div className="stat-number">
+              <StatsCounter 
+                end={10000} 
+                suffix="+" 
+                duration={2000}
+                className="stats-counter--gradient stats-counter--large"
+              />
+            </div>
             <div className="stat-label">Recipes</div>
           </div>
           <div className="stat-item">
-            <div className="stat-number">50K+</div>
+            <div className="stat-number">
+              <StatsCounter 
+                end={50000} 
+                suffix="+" 
+                duration={2500}
+                className="stats-counter--gradient stats-counter--large"
+              />
+            </div>
             <div className="stat-label">Happy Cooks</div>
           </div>
           <div className="stat-item">
-            <div className="stat-number">4.9★</div>
+            <div className="stat-number">
+              <StatsCounter 
+                end={4.9} 
+                suffix="★" 
+                duration={1500}
+                decimals={1}
+                className="stats-counter--gradient stats-counter--large"
+              />
+            </div>
             <div className="stat-label">Rating</div>
           </div>
         </div>

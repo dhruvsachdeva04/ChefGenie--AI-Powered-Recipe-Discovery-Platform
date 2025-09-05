@@ -1,4 +1,5 @@
 import React, { forwardRef } from 'react'
+import { AnimatedButton } from '../UI';
 import './popRec.css';
 import RepCard from './RepCard'
 import image1 from '../../assets/pavv.png'
@@ -78,12 +79,18 @@ const PopularRecipes = forwardRef((props, ref) => {
         </div>
 
         <div className="section-footer">
-          <button className="btn-secondary">
+          <AnimatedButton 
+            variant="secondary" 
+            size="medium"
+            icon={
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                <path d="M5 12h14M12 5l7 7-7 7"></path>
+              </svg>
+            }
+            iconPosition="right"
+          >
             View All Recipes
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-              <path d="M5 12h14M12 5l7 7-7 7"></path>
-            </svg>
-          </button>
+          </AnimatedButton>
         </div>
       </div>
     </section>

@@ -31,6 +31,7 @@ export const Layout = () => {
             <div className="nav-links">
               <a href="#home" className="nav-link">Home</a>
               <a href="#popular-recipes" className="nav-link">Recipes</a>
+              <a href="#features" className="nav-link">Features</a>
               <a href="#footer" className="nav-link">Contact</a>
             </div>
             
