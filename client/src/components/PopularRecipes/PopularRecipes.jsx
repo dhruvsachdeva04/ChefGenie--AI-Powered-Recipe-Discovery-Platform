@@ -2,43 +2,43 @@ import React, { forwardRef } from 'react'
 import { AnimatedButton } from '../UI';
 import './popRec.css';
 import RepCard from './RepCard'
-import image1 from '../../assets/momo.png'
-import image2 from '../../assets/dosa.png'
-import image3 from '../../assets/gulab.png'
+import image1 from '../../assets/Chicken-Biryani-Recipe.jpg'
+import image2 from '../../assets/rava-upma.jpeg'
+import image3 from '../../assets/aloo-paratha.jpeg'
 
 const popularRecipes = [
   {
     id: 1,
     recImage: image1,
-    dishName: 'Chicken Momos',
-    prepTime: '20 min',
-    cookTime: '15 min',
+    dishName: 'Chicken Biryani',
+    prepTime: '30 min',
+    cookTime: '45 min',
     difficulty: 'Medium',
-    rating: 4.8,
-    category: 'Tibetan',
-    recLink: "https://www.indianhealthyrecipes.com/chicken-momos-recipe/"
+    rating: 4.9,
+    category: 'Mughlai',
+    recLink: "https://www.indianhealthyrecipes.com/chicken-biryani-recipe/"
   },
   {
     id: 2,
     recImage: image2,
-    dishName: 'Paneer Butter Masala',
-    prepTime: '15 min',
-    cookTime: '25 min',
+    dishName: 'Rava Upma',
+    prepTime: '5 min',
+    cookTime: '15 min',
     difficulty: 'Easy',
-    rating: 4.9,
-    category: 'North Indian',
-    recLink: "https://www.indianhealthyrecipes.com/paneer-butter-masala-recipe/"
+    rating: 4.6,
+    category: 'South Indian',
+    recLink: "https://www.indianhealthyrecipes.com/upma-recipe-how-to-make-upma/"
   },
   {
     id: 3,
     recImage: image3,
-    dishName: 'Rasgulla',
-    prepTime: '15 min',
-    cookTime: '30 min',
+    dishName: 'Aloo Paratha',
+    prepTime: '20 min',
+    cookTime: '25 min',
     difficulty: 'Medium',
-    rating: 4.7,
-    category: 'Bengali Dessert',
-    recLink: "https://www.indianhealthyrecipes.com/rasgulla-recipe/"
+    rating: 4.8,
+    category: 'North Indian',
+    recLink: "https://www.indianhealthyrecipes.com/aloo-paratha/"
   },
 ]
 
